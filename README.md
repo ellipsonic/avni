@@ -12,6 +12,7 @@ All apps are tested and deployed on the following stack
 
 ## App
 Internal app is testing and deployment is set to 84.200.53.77 server
+> Use username as admin and password as admin as the default credentials if login is prompted
 
 ## Database
 Set to default VPS server 84.200.193.32, DB dump will be available on your server once <App Name>_DB.sh scripts are executed
