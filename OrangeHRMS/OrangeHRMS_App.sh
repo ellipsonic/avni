@@ -58,11 +58,11 @@ sed -i "s/display_errors = Off/display_errors = On/g" ${php_config_file}
 sed -i "s/AllowOverride None/AllowOverride All/g" ${apache2_config_file}
 
 # Site base to be set to /var/www/html - Can be changed as needed
-count=$(cat ${apache2_config_file} | sed -n "/var\/www\/html\/>/p" | wc -l)
+count=$(cat ${apache2_config_file} | sed -n "/var\/www\/>/p" | wc -l)
 if [ $count -gt 0 ]; then
-        echo "Site base already set to  /var/www/html/"    
+        echo "Site base already set to  /var/www/"    
 else    
-        sed -i "s/var\/www/var\/www\/html/g" ${apache2_config_file}
+        sed -i "s/var\/www\/html/var\/www\/g" ${apache2_config_file}
 fi
 
 # Fix Database IP addresses
