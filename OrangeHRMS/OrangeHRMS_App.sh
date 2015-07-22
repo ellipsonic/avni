@@ -41,13 +41,13 @@ sudo a2enmod rewrite
 sudo service apache2 restart
 
 # cd and git clone
-cd /var/www/html
+cd /var/www/
 rm -f /usr/share/apache2/default-site/index.html
 rm -rf index.html
 
 # Get into /var/www/html and pull php files
-cd /var/www/
-chmod 777 -R html/
+cd /var/
+chmod 777 -R /var/www/
 cd html
 git clone https://github.com/ellipsonic/orangehrm_app.git .
 bash ./fix_permissions.sh 
@@ -68,12 +68,12 @@ fi
 # Fix Database IP addresses
 echo "Please enter DB Host(84.200.193.32): "
 read DBHOST
-sed -i "s/host=84.200.193.32/host=$DBHOST/g" /var/www/html/symfony/config/databases.yml
-sed -i "s/host=84.200.193.32/host=$DBHOST/g" /var/www/html/symfony/cache/orangehrm/prod/config/config_databases.yml.php
+sed -i "s/host=84.200.193.32/host=$DBHOST/g" /var/www/symfony/config/databases.yml
+sed -i "s/host=84.200.193.32/host=$DBHOST/g" /var/www/symfony/cache/orangehrm/prod/config/config_databases.yml.php
 echo "DBHOST set to: $DBHOST"
 
 # Clear cache
-rm -rf /var/www/html/symfony/cache/orangehrm/prod/config/config_autoload.yml.php
+rm -rf /var/www/symfony/cache/orangehrm/prod/config/config_autoload.yml.php
 
 
 sudo a2enmod rewrite
