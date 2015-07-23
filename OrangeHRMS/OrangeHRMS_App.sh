@@ -68,6 +68,7 @@ fi
 # Fix Database IP addresses
 echo "Please enter DB Host(84.200.193.32): "
 read DBHOST
+sed -i "s/host=84.200.193.32/host=$DBHOST/g" /var/www/lib/confs/Conf.php
 sed -i "s/host=84.200.193.32/host=$DBHOST/g" /var/www/symfony/config/databases.yml
 sed -i "s/host=84.200.193.32/host=$DBHOST/g" /var/www/symfony/cache/orangehrm/prod/config/config_databases.yml.php
 echo "DBHOST set to: $DBHOST"
