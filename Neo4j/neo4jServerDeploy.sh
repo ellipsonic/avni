@@ -5,6 +5,7 @@ apt-get install -y sudo
 # Install dependencies
 sudo apt-get install -y git
 sudo apt-get install -y openjdk-7-jdk
+sudo apt-get install -y curl
 
 # Git all files
 git clone https://github.com/ellipsonic/neo4j.git
