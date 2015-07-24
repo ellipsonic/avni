@@ -30,6 +30,7 @@ mysql -u root -e "CREATE DATABASE IF NOT EXISTS orangehrm_mysql_d" -ppassword
 
 # Git all mysql files
 cd /tmp
+rm -rf *
 git clone https://github.com/ellipsonic/orangehrm_db.git .
 mysql -u root orangehrm_mysql_d < /tmp/orangehrm_mysql.sql -ppassword
  
