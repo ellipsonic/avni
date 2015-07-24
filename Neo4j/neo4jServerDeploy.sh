@@ -13,4 +13,5 @@ cd neo4j
 pubilc_ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
 sudo sed -i ''s/org.neo4j.server.webserver.address=0.0.0.0/org.neo4j.server.webserver.address=$pubilc_ip/g'' conf/neo4j-server.properties
 bin/neo4j start
-
+clear
+echo "Check your browser, username neo4j and password is admin"
