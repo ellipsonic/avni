@@ -46,10 +46,15 @@ rm -f /usr/share/apache2/default-site/index.html
 rm -rf index.html
 
 # Get into /var/www/html and pull php files
-cd /var/
+cd /var/www/
 chmod 777 -R /var/www/
-cd html
 git clone https://github.com/ellipsonic/orangehrm_app.git .
+
+# Add dirs
+mkdir lib/logs
+mkdir upgrader/cache
+mkdir upgrader/log
+
 bash ./fix_permissions.sh 
 
 # Fix Apache .htaccess issues
