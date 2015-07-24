@@ -31,9 +31,8 @@ sudo apt-get -y install php5-gd
 sudo apt-get -y install php5-cli 
 sudo apt-get -y install php5-dev 
 sudo apt-get -y install mysql-client
- 
-sudo apt-get -y install php5enmod 
 sudo apt-get -y install php5-mcrypt 
+php5enmod php5-mcrypt 
 sudo apt-get -y install curl
 sudo apt-get -y install git 
 
@@ -41,12 +40,11 @@ sudo a2enmod rewrite
 sudo service apache2 restart
 
 # cd and git clone
-cd /var/www/
 rm -f /usr/share/apache2/default-site/index.html
-rm -rf index.html
+cd /var/www/
+rm -rf html
 
 # Get into /var/www/html and pull php files
-cd /var/www/
 chmod 777 -R /var/www/
 git clone https://github.com/ellipsonic/orangehrm_app.git .
 
@@ -77,6 +75,9 @@ sed -i "s/host=84.200.193.32/host=$DBHOST/g" /var/www/lib/confs/Conf.php
 sed -i "s/host=84.200.193.32/host=$DBHOST/g" /var/www/symfony/config/databases.yml
 sed -i "s/host=84.200.193.32/host=$DBHOST/g" /var/www/symfony/cache/orangehrm/prod/config/config_databases.yml.php
 echo "DBHOST set to: $DBHOST"
+
+# Change document root to var/www/
+sed -i "s/\/var\/www\/html/\/var\/www/g" /etc/apache2/sites-available/000-default.conf
 
 # Clear cache
 rm -rf /var/www/symfony/cache/orangehrm/prod/config/config_autoload.yml.php
