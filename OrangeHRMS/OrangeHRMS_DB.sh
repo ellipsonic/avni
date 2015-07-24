@@ -21,21 +21,21 @@ php5enmod mcrypt
  
 #The following commands set the MySQL root password to root when you install the mysql-server package.
  
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password admin'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password admin'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password password'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password password'
 sudo apt-get -y install git
 sudo apt-get -y install mysql-server
  
-mysql -u root -e "CREATE DATABASE IF NOT EXISTS orangehrm2" -padmin
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS orangehrm_mysql_d" -ppassword
 
 # Git all mysql files
 cd /tmp
 git clone https://github.com/ellipsonic/orangehrm_db.git .
-mysql -u root orangehrm2 < /tmp/orangehrm_mysql.sql -padmin
+mysql -u root orangehrm_mysql_d < /tmp/orangehrm_mysql.sql -ppassword
  
 # Allow any server to connect 
 sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
-echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'admin' WITH GRANT OPTION" | mysql -u root -padmin
+echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION" | mysql -u root -ppassword
 
 #Restart all the installed services to verify that everything is installed properly 
 echo -e "\n"
