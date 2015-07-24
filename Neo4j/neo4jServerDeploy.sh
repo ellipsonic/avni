@@ -1,6 +1,9 @@
 # Update system files
-apt-get update
-apt-get install -y sudo
+sudo apt-get update
+sudo apt-get install -y sudo
+
+# Stop apache2
+sudo service apache2 stop
 
 # Install dependencies
 sudo apt-get install -y git
