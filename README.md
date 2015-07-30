@@ -18,3 +18,24 @@ Internal app is testing and deployment is set to 84.200.53.77 server
 Set to default VPS server 84.200.193.32, DB dump will be available on your server once <App Name>_DB.sh scripts are executed
 
 > Deployment script will prompt for IP address of the database host; this to be automated in the yaml scripts
+
+## OrangeHRMS
+Username: admin
+Password: admin
+
+## Neo4j
+Username: ne04j
+Password: admin
+
+## Wiki
+Username: ne04j
+Password: admin
+
+## phpBB
+Username: ne04j
+Password: admin
+
+## vanillaForums
+Username: ne04j
+Password: admin
+
