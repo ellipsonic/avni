@@ -28,29 +28,16 @@ Username: ne04j
 Password: admin
 
 ## Wiki
-Username: admin
-Password: password
+Username: ne04j
+Password: admin
 
 ## phpBB
-Username: admin
-Password: password
+Username: ne04j
+Password: admin
 
 ## vanillaForums
-Username: admin
-Password: password
-
-##wordpress
-Username: admin
-Password: password
-
-##moodle
-Username: admin
-Password: R@bbith0le
-
-##piwigo
-Username: admin
-Password: password
-
+Username: ne04j
+Password: admin
 
 ## keystone
 > To start server node keystone & on the server
