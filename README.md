@@ -1,5 +1,5 @@
 # Avni Scripts for deployment
-
+# Please clear cache before deployment
 # Usage
 Run the app scripts on app server by executing <App Name>_DB.sh on it's box
 Run the db scripts on it's server by executing <App Name>_App.sh on it's box
