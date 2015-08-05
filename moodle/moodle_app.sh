@@ -52,6 +52,10 @@ sed -i "s/display_startup_errors = Off/display_startup_errors = On/g" ${php_conf
 sed -i "s/display_errors = Off/display_errors = On/g" ${php_config_file}
 sed -i "s/AllowOverride None/AllowOverride All/g" ${apache2_config_file}
 
+#Fix Application IP Addresses
+pubilc_ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
+sed -i "s/http:\/\/localhost/http:\/\/$pubilc_ip/g" /var/www/config.php
+
 
 # Fix Database IP addresses
 echo "Please enter DBHOST(localhost): "
