@@ -36,8 +36,14 @@ Username: admin
 Password: password
 
 ## vanillaForums
-Username: admin
-Password: password
+Database Host:localhost
+Database Name:vanilla
+Database User:root
+Database Password:password
+Application Title:vanilla2
+Admin Email:admin@admin.com
+Admin Username: admin
+Admin Password: password
 
 ##wordpress
 Username: admin
