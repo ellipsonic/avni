@@ -1,5 +1,5 @@
 # Avni Scripts for deployment
-# Please clear cache before deployment
+
 # Usage
 Run the app scripts on app server by executing <App Name>_DB.sh on it's box
 Run the db scripts on it's server by executing <App Name>_App.sh on it's box
@@ -36,14 +36,8 @@ Username: admin
 Password: password
 
 ## vanillaForums
-Database Host:localhost
-Database Name:vanilla
-Database User:root
-Database Password:password
-Application Title:vanilla2
-Admin Email:admin@admin.com
-Admin Username: admin
-Admin Password: password
+Username: admin
+Password: password
 
 ##wordpress
 Username: admin
@@ -63,3 +57,14 @@ Password: password
 Username: admin
 Password: admin
 
+##kanboard
+Username: admin
+Password: admin
+
+##ERP next
+Username:Administrator
+Password will be displayed in the terminal
+
+##Wagtail
+Username:ubuntu
+password:admin
