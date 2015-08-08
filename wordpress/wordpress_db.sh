@@ -25,15 +25,19 @@ cd /tmp
 rm -rf *
 mkdir db
 cd db
-git clone https://github.com/abhinay100/wordpress_data.git .
-
-
-
+git clone https://github.com/abhinay100/word_db.git .
 mysql -u root wordpress < /tmp/db/wordpress.sql -ppassword
+
 
 # Allow any server to connect
 sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION" | mysql -u root -ppassword
+
+# allow db database connection
+pubilc_ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
+sed -i "s/localhost/$public_ip/g" /tmp/db/wordpress.sql
+
+
 
 #Restart all the installed services to verify that everything is installed properly
 echo -e "\n"
