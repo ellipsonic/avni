@@ -41,7 +41,7 @@ rm -rf *
 
 # Get into /var/www/html and pull php files
 chmod 777 -R /var/www/
-git clone https://github.com/abhinay100/wordpress_app.git .
+git clone https://github.com/abhinay100/word_app.git .
 
 #change permissions
 chmod 777 -R /var/www/
@@ -53,14 +53,13 @@ sed -i "s/display_errors = Off/display_errors = On/g" ${php_config_file}
 sed -i "s/AllowOverride None/AllowOverride All/g" ${apache2_config_file}
 
 
-# Fix Database IP addresses
-echo "Please enter SITEURL(localhost): "
-read siteurl
-sed -i "s/localhost/$siteurl/g" /var/www/wp-config.php
+#Fix Application IP Addresses
+pubilc_ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
+sed -i "s/http:\/\/localhost/http:\/\/$pubilc_ip/g" /var/www/wp-config.php
+sed -i "s/localhost/$public_ip/g" /var/www/wp-config.php
 
 # Change document root to var/www/
 sed -i "s/\/var\/www\/html/\/var\/www/g" /etc/apache2/sites-available/000-default.conf
 
 sudo a2enmod rewrite
 sudo service apache2 restart	
-
