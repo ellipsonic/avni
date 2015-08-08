@@ -39,7 +39,7 @@ Password: password
 Username: admin
 Password: password
 
-##wordpress
+## wordpress
 Username: admin
 Password: password
 (run the both the script in single server)
@@ -47,7 +47,7 @@ Password: password
 Username: admin
 Password: R@bbith0le
 
-##piwigo
+## piwigo
 Username: admin
 Password: password
 
@@ -57,14 +57,26 @@ Password: password
 Username: admin
 Password: admin
 
-##kanboard
+## kanboard
 Username: admin
 Password: admin
 
-##ERP next
+## ERP next
 Username:Administrator
 Password will be displayed in the terminal
 
-##Wagtail
+## Wagtail
 Username:ubuntu
 password:admin
+
+## Rocket Chat
+> Runs on Nodejs and mongo db, chat application
+
+## Cloud 9 IDE
+> Online IDE on cloud
+
+## Local Market
+> Mobile social engagement app
+
+## Community TODO
+> Build a collaborative task app
