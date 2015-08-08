@@ -42,7 +42,7 @@ Password: password
 ##wordpress
 Username: admin
 Password: password
-
+(run the both the script in single server)
 ##moodle
 Username: admin
 Password: R@bbith0le
