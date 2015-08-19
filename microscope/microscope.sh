@@ -15,11 +15,12 @@ export LC_ALL=C
 
 # Clone the repo
 
-git clone https://github.com/sebastienbarre/meteor-leaderboard.git
-cd meteor-leaderboard
+git clone https://github.com/DiscoverMeteor/Microscope.git
+cd Microscope
 
 # Map the private IP to public IP
 private_ip=$(hostname -i)
 sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j DNAT --to-destination $private_ip:3000
 sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 sudo meteor <&- &
+

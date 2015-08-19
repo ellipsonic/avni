@@ -81,6 +81,10 @@ password:admin
 ## Community TODO
 > Build a collaborative task app
 
+## microscope
+Username:admin
+password:password
+
 ##Vtiger
 Username:admin
 password:password
