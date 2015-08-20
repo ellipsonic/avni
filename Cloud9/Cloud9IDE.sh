@@ -4,11 +4,13 @@ sudo apt-get -y update
 # Install git and curl
 sudo apt-get -y install curl
 sudo apt-get -y install git 
-sudo apt-get -y install build-essential
+
 
 # Install nodejs and npm
-curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
-sudo apt-get install -y nodejs
+curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
+sudo apt-get install --yes nodejs
+sudo apt-get update 
+sudo apt-get -y install build-essential
 sudo apt-get update 
 
 # Clone the repo
