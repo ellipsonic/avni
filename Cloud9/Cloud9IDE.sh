@@ -6,6 +6,11 @@ sudo apt-get -y install curl
 sudo apt-get -y install git 
 sudo apt-get -y install build-essential
 
+# Install nodejs and npm
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+sudo apt-get install -y nodejs
+sudo apt-get update 
+
 # Clone the repo
 git clone git://github.com/c9/core.git c9sdk
 cd c9sdk
