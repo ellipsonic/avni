@@ -49,9 +49,9 @@ sed -i "s/display_errors = Off/display_errors = On/g" ${php_config_file}
 sed -i "s/AllowOverride None/AllowOverride All/g" ${apache2_config_file}
 
 # Fix Database IP addresses
-echo "Please enter DB Host(localhost): "
-read DBHOST
-sed -i "s/localhost/$DBHOST/g" /var/www/config.db.php
+pubilc_ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
+sed -i "s/localhost/$pubilc_ip/g" /var/www/config.db.php
+sed -i "s/localhost/$public_ip/g" /var/www/config.inc.php
 
 # Change document root to var/www/
 sed -i "s/\/var\/www\/html/\/var\/www/g" /etc/apache2/sites-available/000-default.conf
@@ -103,6 +103,6 @@ echo "Please Check the Install Services, There is some $(tput bold)$(tput setaf 
 else
 echo "Installed Services run $(tput bold)$(tput setaf 2)Sucessfully$(tput sgr0)"
 fi
-echo -e "\n"o
+echo -e "\n"
 
 
