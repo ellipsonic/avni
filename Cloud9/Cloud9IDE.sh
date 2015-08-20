@@ -4,6 +4,7 @@ sudo apt-get -y update
 # Install git and curl
 sudo apt-get -y install curl
 sudo apt-get -y install git 
+sudo apt-get -y install build-essential
 
 # Clone the repo
 git clone git://github.com/c9/core.git c9sdk
