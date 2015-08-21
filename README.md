@@ -88,3 +88,11 @@ password:password
 ##Vtiger
 Username:admin
 password:password
+
+##petra
+Username:admin
+password:password
+
+##odoo8
+Username:admin
+password:R@bbith0le
