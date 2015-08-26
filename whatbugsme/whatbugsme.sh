@@ -15,8 +15,8 @@ export LC_ALL=C
 
 # Clone the repo
 
-git clone https://github.com/zhouzhuojie/hast.git
-cd hast
+git clone https://github.com/rstgroup/whatbugsme.git
+cd whatbugsme
 
 # Map the private IP to public IP
 private_ip=$(hostname -i)

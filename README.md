@@ -96,3 +96,17 @@ password:password
 ##odoo8
 Username:admin
 password:R@bbith0le
+
+##onlinevotingsystem
+Voterid:12345
+password:password
+
+##fengoffice
+Username:admin
+password:password
+
+##formalms
+Username:admin
+password:password
+
+
