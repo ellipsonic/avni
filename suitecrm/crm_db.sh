@@ -18,23 +18,22 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again p
 sudo apt-get -y install git
 sudo apt-get -y install mysql-server
 
-mysql -u root -e "CREATE DATABASE IF NOT EXISTS forma" -ppassword
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS crm" -ppassword
 
 # Git all mysql files
 cd /tmp
 rm -rf *
 mkdir db
 cd db
-git clone https://github.com/abhinay100/forma_db.git .
-mysql -u root forma < /tmp/db/forma.sql -ppassword
+git clone https://github.com/abhinay100/suitecrm_db.git .
 
+
+
+mysql -u root crm < /tmp/db/crm.sql -ppassword
 
 # Allow any server to connect
 sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION" | mysql -u root -ppassword
-
-
-
 
 #Restart all the installed services to verify that everything is installed properly
 echo -e "\n"

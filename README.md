@@ -24,6 +24,7 @@ Username: admin
 Password: admin
 
 ## Neo4j
+> Please deploy in single VM
 Username: ne04j
 Password: admin
 
@@ -40,9 +41,10 @@ Username: admin
 Password: password
 
 ## wordpress
+> Please deploy in single VM
 Username: admin
 Password: password
-(run the both the script in single server)
+
 ##moodle
 Username: admin
 Password: R@bbith0le
@@ -58,14 +60,17 @@ Username: admin
 Password: admin
 
 ## kanboard
+> Please deploy in single VM
 Username: admin
 Password: admin
 
 ## ERP next
+> Please deploy in single VM
 Username:Administrator
 Password will be displayed in the terminal
 
 ## Wagtail
+> Please deploy in single VM
 Username:ubuntu
 password:admin
 
@@ -82,26 +87,32 @@ password:admin
 > Build a collaborative task app
 
 ## microscope
+
 Username:admin
 password:password
 
 ##Vtiger
+> Please deploy in single VM
 Username:admin
 password:password
 
 ##petra
+
 Username:admin
 password:password
 
 ##odoo8
+> Please deploy in single VM
 Username:admin
 password:R@bbith0le
 
 ##onlinevotingsystem
+
 Voterid:12345
 password:password
 
 ##fengoffice
+> Please deploy in single VM
 Username:admin
 password:password
 
@@ -110,5 +121,23 @@ Username:admin
 password:password
 
 ##drupal
+Username:admin
+password:password
+
+##tomato cart
+> Please deploy in single VM
+Username:admin@admin.com
+password:password
+
+##suitecrm
+Username:admin
+password:password
+
+##openemr
+> Please deploy in single VM
+Username:admin
+password:password
+
+##clipbucket
 Username:admin
 password:password

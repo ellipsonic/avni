@@ -41,7 +41,7 @@ rm -rf *
 
 # Get into /var/www/html and pull php files
 chmod 777 -R /var/www/
-git clone https://github.com/abhinay100/word_app.git .
+git clone https://github.com/abhinay100/tomato_app.git .
 
 #change permissions
 chmod 777 -R /var/www/
@@ -53,16 +53,16 @@ sed -i "s/display_errors = Off/display_errors = On/g" ${php_config_file}
 sed -i "s/AllowOverride None/AllowOverride All/g" ${apache2_config_file}
 
 
-#Fix Application IP Addresses
-pubilc_ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
-sed -i "s/http:\/\/localhost/http:\/\/$pubilc_ip/g" /var/www/wp-config.php
-sed -i "s/localhost/$public_ip/g" /var/www/wp-config.php
+# Fix Database IP addresses
+echo "Please enter DBHOST(localhost): "
+read DBHOST
+sed -i "s/localhost/$DBHOST/g" /var/www/includes/configure.php
 
-# Change document root to var/www/
-sed -i "s/\/var\/www\/html/\/var\/www/g" /etc/apache2/sites-available/000-default.conf
+
 
 sudo a2enmod rewrite
 sudo service apache2 restart	
+
 
 #!/bin/bash
 #Instructions to use this script
@@ -84,26 +84,22 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again p
 sudo apt-get -y install git
 sudo apt-get -y install mysql-server
 
-mysql -u root -e "CREATE DATABASE IF NOT EXISTS wordpress" -ppassword
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS tomatocart" -ppassword
 
 # Git all mysql files
 cd /tmp
 rm -rf *
 mkdir db
 cd db
-git clone https://github.com/abhinay100/word_db.git .
-mysql -u root wordpress < /tmp/db/wordpress.sql -ppassword
+git clone https://github.com/abhinay100/tomato_db.git .
 
+
+
+mysql -u root tomatocart < /tmp/db/tomatocart.sql -ppassword
 
 # Allow any server to connect
 sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION" | mysql -u root -ppassword
-
-# allow db database connection
-pubilc_ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
-sed -i "s/localhost/$public_ip/g" /tmp/db/wordpress.sql
-
-
 
 #Restart all the installed services to verify that everything is installed properly
 echo -e "\n"
