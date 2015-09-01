@@ -41,7 +41,7 @@ rm -rf *
 
 # Get into /var/www/html and pull php files
 chmod 777 -R /var/www/
-git clone https://github.com/abhinay100/clipbucket_app.git .
+git clone https://github.com/abhinay100/bucket_app.git .
 
 #change permissions
 chmod 777 -R /var/www/
