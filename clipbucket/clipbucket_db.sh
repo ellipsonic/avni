@@ -25,7 +25,7 @@ cd /tmp
 rm -rf *
 mkdir db
 cd db
-git clone https://github.com/abhinay100/clickbucket_db.git .
+git clone https://github.com/abhinay100/bucket_db.git .
 
 
 
