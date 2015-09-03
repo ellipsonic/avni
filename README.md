@@ -141,3 +141,7 @@ password:password
 ##clipbucket
 Username:admin
 password:password
+
+##seopanel
+Username:spadmin
+password:spadmin
