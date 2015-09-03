@@ -18,18 +18,18 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again p
 sudo apt-get -y install git
 sudo apt-get -y install mysql-server
 
-mysql -u root -e "CREATE DATABASE IF NOT EXISTS opencart" -ppassword
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS tomatocart" -ppassword
 
 # Git all mysql files
 cd /tmp
 rm -rf *
 mkdir db
 cd db
-git clone https://github.com/abhinay100/opencart_db.git .
+git clone https://github.com/abhinay100/tomato_db.git .
 
 
 
-mysql -u root opencart < /tmp/db/opencart.sql -ppassword
+mysql -u root tomatocart < /tmp/db/tomatocart.sql -ppassword
 
 # Allow any server to connect
 sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
