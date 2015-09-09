@@ -41,7 +41,7 @@ rm -rf *
 
 # Get into /var/www/html and pull php files
 chmod 777 -R /var/www/
-git clone https://github.com/abhinay100/openerm_app.git .
+git clone https://github.com/abhinay100/emr_app.git .
 
 #change permissions
 chmod 777 -R /var/www/
@@ -94,7 +94,7 @@ cd /tmp
 rm -rf *
 mkdir db
 cd db
-git clone https://github.com/abhinay100/openerm_db.git .
+git clone https://github.com/abhinay100/emr_db.git .
 
 
 
