@@ -112,7 +112,7 @@ Voterid:12345
 password:password
 
 ##fengoffice
-> Please deploy in single VM
+
 Username:admin
 password:password
 
@@ -125,7 +125,6 @@ Username:admin
 password:password
 
 ##tomato cart
-> Please deploy in single VM
 Username:admin@admin.com
 password:password
 
@@ -134,7 +133,6 @@ Username:admin
 password:password
 
 ##openemr
-> Please deploy in single VM
 Username:admin
 password:password
 
@@ -145,3 +143,7 @@ password:password
 ##seopanel
 Username:spadmin
 password:spadmin
+
+##Front accounting
+Username:admin
+password:password
