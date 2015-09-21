@@ -147,3 +147,24 @@ password:spadmin
 ##Front accounting
 Username:admin
 password:password
+
+##Spagobi
+URL: http://52.8.106.155/SpagoBI/
+* Will be on until the server and Catalina process is On
+
+##SchoolTool
+URL: http://52.8.55.133/
+Username: manager
+Password: schooltool
+
+##OpenNote
+URL: http://52.8.110.84/
+
+##Limesurvey
+Public URL: http://52.8.200.103/
+Admin. URL: http://52.8.200.103/index.php/admin/authentication/sa/login
+Username: admin
+Password: password
+
+
+
