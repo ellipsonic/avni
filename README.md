@@ -25,8 +25,8 @@ Password: admin
 
 ## Neo4j
 > Please deploy in single VM
-Username: ne04j
-Password: admin
+Username: admin
+Password: password
 
 ## Wiki
 Username: admin
