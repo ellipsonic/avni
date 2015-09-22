@@ -18,7 +18,7 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again p
 sudo apt-get -y install git
 sudo apt-get -y install mysql-server
 
-mysql -u root -e "CREATE DATABASE IF NOT EXISTS seopanel" -ppassword
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS seo" -ppassword
 
 # Git all mysql files
 cd /tmp
@@ -29,7 +29,7 @@ git clone https://github.com/abhinay100/seo_db.git .
 
 
 
-mysql -u root seopanel < /tmp/db/seopanel.sql -ppassword
+mysql -u root seo < /tmp/db/seo.sql -ppassword
 
 # Allow any server to connect
 sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
