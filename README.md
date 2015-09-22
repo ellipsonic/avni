@@ -166,5 +166,9 @@ Admin. URL: http://52.8.200.103/index.php/admin/authentication/sa/login
 Username: admin
 Password: password
 
+## Buggenie
+Public URL: http://52.8.55.30/thebuggenie/
+Username: admin
+Password: password
 
 
