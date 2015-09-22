@@ -161,12 +161,14 @@ Password: schooltool
 URL: http://52.8.110.84/
 
 ##Limesurvey
+> Please deploy in single VM
 Public URL: http://52.8.200.103/
 Admin. URL: http://52.8.200.103/index.php/admin/authentication/sa/login
 Username: admin
 Password: password
 
 ## Buggenie
+> Please deploy in single VM
 Public URL: http://52.8.55.30/thebuggenie/public/
 Username: admin
 Password: password
