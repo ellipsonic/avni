@@ -48,4 +48,4 @@ sudo service apache2 restart
 # All done
 clear
 pubilc_ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
-echo "Enter your IP address to see the app, to login 'http://$pubilc_ip/thebuggenie/' "
+echo "Enter your IP address to see the app, to login 'http://$pubilc_ip/thebuggenie/public/' "

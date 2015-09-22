@@ -167,7 +167,7 @@ Username: admin
 Password: password
 
 ## Buggenie
-Public URL: http://52.8.55.30/thebuggenie/
+Public URL: http://52.8.55.30/thebuggenie/public/
 Username: admin
 Password: password
 
