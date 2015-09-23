@@ -39,6 +39,7 @@ sudo git clone https://github.com/ellipsonic/thebuggenige_db.git .
 mysql -u root -proot thebuggenige_db < thebuggenige_db.sql
 
 # Update server to accept .htaccess files, enable mod-rewrite and restart the server
+chmod 777 -R /var/
 sudo sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/sites-available/default
 
 sudo service apache2 restart
