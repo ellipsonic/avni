@@ -41,7 +41,7 @@ rm -rf *
 
 # Get into /var/www/html and pull php files
 chmod 777 -R /var/www/
-git clone https://github.com/abhinay100/front_app.git .
+git clone https://github.com/abhinay100/seo_app.git .
 
 #change permissions
 chmod 777 -R /var/www/
@@ -56,12 +56,12 @@ sed -i "s/AllowOverride None/AllowOverride All/g" ${apache2_config_file}
 # Fix Database IP addresses
 
 pubilc_ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
-sed -i "s/http:\/\/localhost/http:\/\/$pubilc_ip/g" /var/www/config/config.php
+sed -i "s/http:\/\/localhost/http:\/\/$pubilc_ip/g" /var/www/config/sp-config.php
 
 
 echo "Please enter DBHOST(localhost): "
 read DBHOST
-sed -i "s/localhost/$DBHOST/g" /var/www/config_db.php
+sed -i "s/localhost/$DBHOST/g" /var/www/config/sp-config.php
 
 
 
