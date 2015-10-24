@@ -56,7 +56,7 @@ sed -i "s/AllowOverride None/AllowOverride All/g" ${apache2_config_file}
 # Fix Database IP addresses
 echo "Please enter DBHOST(localhost): "
 read DBHOST
-sed -i "s/localhost/$DBHOST/g" /var/www/config.php
+sed -i "s/localhost/$DBHOST/g" /var/www/sites/default/config.php
 
 
 
