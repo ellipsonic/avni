@@ -28,35 +28,35 @@ sudo apt-get -y install php5-cli
 sudo apt-get -y install php5-dev
 sudo apt-get -y install mysql-client
 sudo apt-get -y install php5-mcrypt
-php5enmod php5-mcrypt
+sudo php5enmod php5-mcrypt
 sudo apt-get -y install curl
 sudo apt-get -y install git
 sudo a2enmod rewrite
 sudo service apache2 restart
 
 # cd and git clone
-rm -f /usr/share/apache2/default-site/index.html
+sudo rm -f /usr/share/apache2/default-site/index.html
 cd /var/www/
-rm -rf *
+sudo rm -rf *
 
 # Get into /var/www/html and pull php files
-chmod 777 -R /var/www/
+sudo chmod 777 -R /var/www/
 git clone https://github.com/ellipsonic/tomato_app.git .
 
 #change permissions
-chmod 777 -R /var/www/
+sudo chmod 777 -R /var/www/
 
 
 # Fix Apache .htaccess issues
-sed -i "s/display_startup_errors = Off/display_startup_errors = On/g" ${php_config_file}
-sed -i "s/display_errors = Off/display_errors = On/g" ${php_config_file}
-sed -i "s/AllowOverride None/AllowOverride All/g" ${apache2_config_file}
+sudo sed -i "s/display_startup_errors = Off/display_startup_errors = On/g" ${php_config_file}
+sudo sed -i "s/display_errors = Off/display_errors = On/g" ${php_config_file}
+sudo sed -i "s/AllowOverride None/AllowOverride All/g" ${apache2_config_file}
 
 
 # Fix Database IP addresses
 
 pubilc_ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
-sed -i "s/http:\/\/localhost/http:\/\/$pubilc_ip/g" /var/www/includes/configure.php
+sudo sed -i "s/http:\/\/localhost/http:\/\/$pubilc_ip/g" /var/www/includes/configure.php
 
 echo "Please enter DBHOST(localhost): "
 read DBHOST
