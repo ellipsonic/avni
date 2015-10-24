@@ -22,7 +22,6 @@ mysql -u root -e "CREATE DATABASE IF NOT EXISTS tomatocart" -ppassword
 
 # Git all mysql files
 cd /tmp
-rm -rf *
 mkdir db
 cd db
 git clone https://github.com/abhinay100/tomato_db.git .
@@ -32,12 +31,12 @@ git clone https://github.com/abhinay100/tomato_db.git .
 mysql -u root tomatocart < /tmp/db/tomatocart.sql -ppassword
 
 # Allow any server to connect
-sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
+sudo sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION" | mysql -u root -ppassword
 
 #Restart all the installed services to verify that everything is installed properly
 echo -e "\n"
-service apache2 restart && service mysql restart > /dev/null
+sudo service apache2 restart && sudo service mysql restart > /dev/null
 echo -e "\n"
 if [ $? -ne 0 ]; then
 echo "Please Check the Install Services, There is some $(tput bold)$(tput setaf 1)Problem$(tput sgr0)"
