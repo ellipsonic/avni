@@ -55,15 +55,20 @@ sudo sed -i "s/AllowOverride None/AllowOverride All/g" ${apache2_config_file}
 
 # Fix Database IP addresses
 
-pubilc_ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
-sudo sed -i "s/http:\/\/localhost/http:\/\/$pubilc_ip/g" /var/www/includes/configure.php
+#pubilc_ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
+#sudo sed -i "s/http:\/\/localhost/http:\/\/$pubilc_ip/g" /var/www/includes/configure.php
+
+sudo sed -i "s/DocumentRoot /var/www/html/bind-address = 0.0.0.0/" 
+sudo sed -i "s/DocumentRoot \/var\/www\/html/DocumentRoot \/var\/www\//g" /etc/apache2/sites-available/000-default.conf
 
 echo "Please enter DBHOST(localhost): "
 read DBHOST
 sed -i "s/localhost/$DBHOST/g" /var/www/includes/configure.php
 
-
-
 sudo a2enmod rewrite
+
+
+
+
 sudo service apache2 restart	
 
