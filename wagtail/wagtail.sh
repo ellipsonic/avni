@@ -15,7 +15,7 @@ cd mysite
 python manage.py migrate
 
 # Create admin user
-echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin')" | python manage.py shell
+echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@admin.com', 'password')" | python manage.py shell
 
 # Run the site in the background "done by adding & symbol at the end of the statement" 
 sudo python manage.py runserver 0.0.0.0:80 &
